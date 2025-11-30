@@ -12,3 +12,9 @@ xfce-wayland.desktop at ~/.config/xfce/labwc/
 ##### browser emojis - https://aur.archlinux.org/packages/noto-color-emoji-fontconfig ``` noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ```
 ##### write to USB, replace path to .iso and /dev/sdX
 ``` sudo dd bs=4M if=/home/pathto.iso of=/dev/sdX conv=fsync oflag=direct status=progress ```
+##### wireguard + systemd 
+```bash
+DNS = 162.252.172.57, 149.154.159.92
+PostUp = resolvectl dns %i 162.252.172.57 149.154.159.92; resolvectl domain %i ~.; resolvectl default-route %i true
+PreDown = resolvectl revert %i
+```
