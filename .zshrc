@@ -1,12 +1,17 @@
-# 1. Completion system
-fpath+=('/usr/share/zsh/site-functions')
+# start zsh new user walkthru, then get zsh-autosuggest and starship
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=2500
+SAVEHIST=4000
+unsetopt beep
+bindkey -e
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '/home/jab/.zshrc'
+
 autoload -Uz compinit
 compinit
-
-# ---- History ----
-HISTFILE=~/.zsh_history
-HISTSIZE=50000
-SAVEHIST=50000
+# End of lines added by compinstall
 
 setopt append_history
 setopt share_history
@@ -14,23 +19,10 @@ setopt hist_ignore_all_dups
 setopt hist_reduce_blanks
 setopt inc_append_history
 
+
 # 2. Autosuggestions (must come AFTER compinit)
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# 3. Syntax highlighting (must come LAST)
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
-
-
-
-
-
-
-# ---- Environment ----
-export QT_QPA_PLATFORMTHEME="qt5ct"
-export LANG="en_US.UTF-8"
-export LC_ALL="en_US.UTF-8"
 export TZ="America/Phoenix"
 
 # ---- Editor ----
@@ -64,3 +56,6 @@ alias sun85='ddcutil setvcp 10 85'
 alias sun90='ddcutil setvcp 10 90'
 alias sun95='ddcutil setvcp 10 95'
 alias sun100='ddcutil setvcp 10 100'
+
+eval "$(zoxide init zsh)"
+eval "$(starship init zsh)"
