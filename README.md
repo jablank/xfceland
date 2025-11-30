@@ -10,4 +10,5 @@ xfce-wayland.desktop at ~/.config/xfce/labwc/
 ### random
 ##### cursor https://github.com/ful1e5/Bibata_Cursor
 ##### browser emojis - https://aur.archlinux.org/packages/noto-color-emoji-fontconfig ``` noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ```
-
+##### write to USB, replace path to .iso and /dev/sdX
+``` sudo dd bs=4M if=/home/pathto.iso of=/dev/sdX conv=fsync oflag=direct status=progress ```
