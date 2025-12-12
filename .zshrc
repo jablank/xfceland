@@ -1,10 +1,7 @@
-# start zsh new user walkthru, then get zsh-autosuggest and starship
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=2500
-SAVEHIST=4000
-unsetopt beep
-bindkey -e
+SAVEHIST=3000
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/jab/.zshrc'
@@ -13,21 +10,43 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+# ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,bg=cyan,bold,underline"
+
 setopt append_history
 setopt share_history
 setopt hist_ignore_all_dups
 setopt hist_reduce_blanks
 setopt inc_append_history
-
-
 # 2. Autosuggestions (must come AFTER compinit)
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-export TZ="America/Phoenix"
 
+export TZ="America/Phoenix"
+export GTK_THEME=Adwaita:dark
+export GTK2_RC_FILES=/usr/share/themes/Adwaita-dark/gtk-2.0/gtkrc
+export QT_STYLE_OVERRIDE=Adwaita-Dark
+export XDG_DATA_DIRS="/usr/local/share:/usr/share:$XDG_DATA_DIRS"
 # ---- Editor ----
 export EDITOR="nano"
 export VISUAL="nano"
+
+# ---- enable ctrl keybinds ----
+bindkey "\e[1;5C" forward-word
+bindkey "\e[1;5D" backward-word
+bindkey "\e[1;5A" up-line-or-history
+bindkey "\e[1;5B" down-line-or-history
+
+
+# ---- super alias ----
+function hypr_edit() {
+    cd ~/.config/hypr || return 1
+    nano autostart.conf environment.conf hotkeybinds.conf hyprland.conf ruleswindows.conf hyprlock.conf hypridle.conf
+}
+
+alias zhypr='hypr_edit'
+
+# Alias the function to the short command
+alias zhypr='hypr_edit'
 
 # ---- WireGuard aliases ----
 alias wgu='sudo wg-quick up lax'
@@ -59,3 +78,5 @@ alias sun100='ddcutil setvcp 10 100'
 
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
+
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
