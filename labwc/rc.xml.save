@@ -1,11 +1,145 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="utf-8"?>
 <labwc_config>
+
+  <!-- Window Placement -->
+  <placement>
+    <policy>cascade</policy>
+    <cascadeOffset x="40" y="30" />
+  </placement>
+
+  <!-- Theme and Font Settings -->
+  <theme>
+    <name>Adwaita-dark</name>
+    <cornerRadius>7</cornerRadius>
+    <font name="Ubuntu Nerd Font" size="10"/>
+  </theme>
+
+  <!-- Desktops (Workspaces) Configuration -->
+  <desktops number="4">
+    <popupTime>1000</popupTime>
+    <names>
+      <name>1</name>
+      <name>2</name>
+      <name>3</name>
+      <name>4</name>
+    </names>
+  </desktops>
+
+  <!-- Focus Settings -->
+  <focus>
+    <followMouse>no</followMouse>
+    <followMouseRequiresMovement>no</followMouseRequiresMovement>
+    <raiseOnFocus>no</raiseOnFocus>
+  </focus>
+
+  <!-- Keyboard Shortcuts -->
   <keyboard>
     <default/>
+
+    <!-- Launchers -->
     <keybind key="W-t">
-      <action name="Execute">
-        <command>xfce4-terminal</command>
-      </action>
+      <action name="Execute" command="xfce4-terminal"/>
+    </keybind>
+    <keybind key="W-e">
+      <action name="Execute" command="thunar"/>
+    </keybind>
+    <keybind key="W-4">
+      <action name="Execute" command="firefox"/>
+    </keybind>
+    <keybind key="W-S-r">
+      <action name="Execute" command="~/dotfiles/scripts/labwc_reset.sh"/>
+    </keybind>
+    <keybind key="W-r">
+      <action name="Execute" command="xfce4-appfinder"/>
+    </keybind>
+
+    <!-- Screenshot & Colorpicker -->
+    <keybind key="W-S-s">
+      <action name="Execute" command="sh -c 'slurp | grim -g - /home/jab/Pictures/Screenshots/$(date +%Y%m%d_%H%M).png'"/>
+    </keybind>
+    <keybind key="W-6">
+      <action name="Execute" command="hyprpicker -f hex"/>
+    </keybind>
+
+    <!-- Disable Default Bindings (W-F4) -->
+    <keybind key="W-F4">
+      <action name="None"/>
+    </keybind>
+
+    <numlock>on</numlock>
+
+    <!-- Window Management & Navigation -->
+    <keybind key="W-q">
+      <action name="Close" />
+    </keybind>
+    <keybind key="A-Tab">
+      <action name="NextWindow" />
+    </keybind>
+    <keybind key="W-Tab">
+      <action name="ToggleMaximize" />
+    </keybind>
+
+    <!-- Switch Desktops -->
+    <keybind key="W-Z">
+      <action name="GoToDesktop" to="1" />
+    </keybind>
+    <keybind key="W-X">
+      <action name="GoToDesktop" to="2" />
+    </keybind>
+    <keybind key="W-c">
+      <action name="GoToDesktop" to="3" />
+    </keybind>
+    <keybind key="W-V">
+      <action name="GoToDesktop" to="4" />
+    </keybind>
+
+    <!-- Move Window to Desktop -->
+    <keybind key="W-S-Z">
+      <action name="SendToDesktop" to="1" follow="yes"/>
+    </keybind>
+    <keybind key="W-S-X">
+      <action name="SendToDesktop" to="2" follow="yes" />
+    </keybind>
+    <keybind key="W-S-c">
+      <action name="SendToDesktop" to="3" follow="yes" />
+    </keybind>
+    <keybind key="W-S-V">
+      <action name="SendToDesktop" to="4" follow="yes" />
+    </keybind>
+
+    <!-- Volume Controls (Fixed Keysyms) -->
+    <keybind key="XF86AudioLowerVolume">
+      <action name="Execute" command="pactl set-sink-volume @DEFAULT_SINK@ -4%" />
+    </keybind>
+    <keybind key="XF86AudioRaiseVolume">
+      <action name="Execute" command="pactl set-sink-volume @DEFAULT_SINK@ +4%" />
+    </keybind>
+    <keybind key="XF86AudioMute">
+      <action name="Execute" command="pactl set-sink-mute @DEFAULT_SINK@ toggle" />
     </keybind>
   </keyboard>
+
+  <!-- Mouse Bindings -->
+  <mouse>
+    <default />
+    <context name="Root">
+      <!-- Right-click desktop menu -->
+      <mousebind button="right" action="Press">
+        <action name="ShowMenu" menu="root-menu" />
+      </mousebind>
+      <!-- Scroll desktop to switch workspaces -->
+      <mousebind direction="Up" action="Scroll">
+        <action name="GoToDesktop" to="left" wrap="yes" />
+      </mousebind>
+      <mousebind direction="Down" action="Scroll">
+        <action name="GoToDesktop" to="right" wrap="yes" />
+      </mousebind>
+    </context>
+  </mouse>
+
+  <!-- Window Snapping -->
+  <snapping>
+    <range>10</range>
+  </snapping>
+
 </labwc_config>

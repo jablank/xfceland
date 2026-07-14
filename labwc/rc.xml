@@ -46,8 +46,13 @@
     <keybind key="W-4">
       <action name="Execute" command="firefox"/>
     </keybind>
-    <keybind key="W-S-r">
-      <action name="Execute" command="~/dotfiles/scripts/labwc_reset.sh"/>
+
+    <keybind key="W-l">
+  <action name="Execute" command="swaylock -c 000000" />
+</keybind>
+    <!-- Log Out of Labwc -->
+    <keybind key="W-S-q">
+      <action name="Exit" />
     </keybind>
     <keybind key="W-r">
       <action name="Execute" command="xfce4-appfinder"/>

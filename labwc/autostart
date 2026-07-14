@@ -1,6 +1,6 @@
 #!/bin/sh
 wlr-randr --output HDMI-A-2 --off &
-/usr/lib/xdg-desktop-portal-wlr 2>&1 &
+
 # Start Swayidle for session lock and screen power management
 swayidle -w \
     timeout 900 'swaylock -f -c 000000' \
@@ -10,9 +10,6 @@ swayidle -w \
 # Enables inhibit_idle when playing audio
 exec sway-audio-idle-inhibit 2>&1 &
 
-
-
-
 # XFCE4's polkit agent
 /usr/libexec/xfce-polkit &
 
@@ -21,12 +18,5 @@ xfsettingsd >/dev/null 2>&1 &
 
 
 pipewire >/dev/null 2>&1 &
-sleep 2
-pipewire-pulse >/dev/null 2>&1 &
 
-# wl-paste --watch --type text/plain cliphist store &
-
-swaybg -i /home/jab/Pictures/xfce-leaves.svg >/dev/null 2>&1 &
-# swaybg -i /home/jab/Pictures/skies.png >/dev/null 2>&1 &
-
-
+swaybg -i /home/void/Pictures/xfce-leaves.svg >/dev/null 2>&1 &
