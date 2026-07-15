@@ -150,6 +150,7 @@
   <libinput>
     <device category="default">
       <accelProfile>flat</accelProfile>
+      <pointerSpeed>0.2</pointerSpeed>
     </device>
   </libinput>
 
