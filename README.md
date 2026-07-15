@@ -6,6 +6,8 @@
 labwc with xfce4 parts autostarted preferred over 
 xfce-wayland.desktop at ~/.config/xfce/labwc/
 ```
+### quirky at night
+##### enable notification logging in xfce4-notifyd-config to show notification plugin history on the xfce4 panel
 
 ### random
 ##### cursor https://github.com/ful1e5/Bibata_Cursor
