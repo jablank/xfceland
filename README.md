@@ -3,8 +3,8 @@
 
 
 ```bash
-labwc with xfce4 elements autostarted preferred over 
-xfce-wayland waiting for the full release.  Also hyprland changes too much.
+labwc with xfce4 elements autostarted preferred over xfce-wayland before it gets released.
+Also hyprland changes too much.
 ```
 ##### quirky at night
 ###### enable notification logging in xfce4-notifyd-config to show notification plugin history on the xfce4 panel
