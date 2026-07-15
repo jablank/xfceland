@@ -147,4 +147,10 @@
     <range>10</range>
   </snapping>
 
+  <libinput>
+    <device category="default">
+      <accelProfile>flat</accelProfile>
+    </device>
+  </libinput>
+
 </labwc_config>

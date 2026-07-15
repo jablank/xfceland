@@ -10,7 +10,7 @@ XKB_DEFAULT_LAYOUT=en
 XDG_CURRENT_DESKTOP=wlroots
 
 QT_QPA_PLATFORM=wayland
-QT_QPA_PLATFORMTHEME=qt5ct  # or "gnome" if you prefer
+QT_QPA_PLATFORMTHEME=gnome  # or "gnome" if you prefer
 QT_AUTO_SCREEN_SCALE_FACTOR=1
 
 GTK_ICON_THEME=Adwaita
