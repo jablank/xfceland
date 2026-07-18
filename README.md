@@ -1,6 +1,6 @@
 # labwc 
 ```bash
-labwc with xfce4 stuff preferred.
+labwc with xfce stuff preferred over xfce4-session.
 ```
 ![Nov 2025](https://github.com/user-attachments/assets/62832125-216e-4962-bd65-d682cbeb9aa9)
 *Nov 2025*
