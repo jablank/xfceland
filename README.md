@@ -1,5 +1,3 @@
-<img width="2560" height="1440" alt="20260718_1551" src="" />
-
 # labwc 
 ```bash
 labwc with xfce4 stuff preferred.
