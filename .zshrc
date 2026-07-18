@@ -107,7 +107,6 @@ alias xx="labwc --exit"
 alias xu="sudo xbps-install -Su"
 alias xi="sudo xbps-install"
 
-
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # ---- WireGuard aliases ----
