@@ -102,7 +102,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 alias zshconfig="mate ~/.zshrc"
 alias ohmyzsh="mate ~/.oh-my-zsh"
-alias xxx="poweroff"
+alias xxx="loginctl poweroff"
 alias xx="labwc --exit"
 alias xu="sudo xbps-install -Su"
 alias xi="sudo xbps-install"
