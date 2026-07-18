@@ -6,7 +6,7 @@ labwc with xfce4 stuff preferred.
 ![Nov 2025](https://github.com/user-attachments/assets/62832125-216e-4962-bd65-d682cbeb9aa9)
 *Nov 2025*
 
-![July, 2026](https://github.com/user-attachments/assets/2b8a1553-4ac7-4c76-9f50-7c617fd56ef7)
+![July, 2026](https://github.com/user-attachments/assets/26de429a-b5a0-4828-b9f4-2084d8b813bc)
 *July, 2026*
 
 
@@ -15,4 +15,3 @@ labwc with xfce4 stuff preferred.
 ###### browser emojis - https://aur.archlinux.org/packages/noto-color-emoji-fontconfig ``` noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ```
 ###### write to USB, replace path to .iso and /dev/sdX
 ``` sudo dd bs=4M if=/home/pathto.iso of=/dev/sdX conv=fsync oflag=direct status=progress ```
-
